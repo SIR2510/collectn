@@ -54,4 +54,4 @@ document.addEventListener('DOMContentLoaded', function() {
         const walk = (x - startX) * 2;
         imageGrid.scrollLeft = scrollLeft - walk;
     });
-});
+}); 
