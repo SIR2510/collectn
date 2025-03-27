@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <div class="background-logo"></div>
+    <main>
+        <div class="content">
+            <div class="left-column">
+                <img src="img/logo.png" alt="Логотип" class="logo">
+                <div class="user-info">
+                    <img src="img/avatar.png" alt="Аватар">
+                    <div class="user_info_text">
+                        <p>@lana-sweet</p>
+                        <p>In Street style outfits</p>
+                    </div>
+                </div>
+                <div class="poll">
+                    <h2>My Shots - Modern Fashion</h2>
+                    <p>Do you like these items so much to buy them?</p>
+                    <form>
+                        <div class="poll-option">
+                            <input type="radio" id="option1" name="vote" data-percent="75%">
+                            <label for="option1" class="radio-container">
+                                <div class="custom-radio"></div> Absolutely
+                            </label>
+                            <div class="percent">75%</div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress"></div>
+                        </div>
+                        
+                        <div class="poll-option">
+                            <input type="radio" id="option2" name="vote" data-percent="15%">
+                            <label for="option2" class="radio-container">
+                                <div class="custom-radio"></div> Maybe
+                            </label>
+                            <div class="percent">15%</div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress"></div>
+                        </div>
+                        
+                        <div class="poll-option">
+                            <input type="radio" id="option3" name="vote" data-percent="5%">
+                            <label for="option3" class="radio-container">
+                                <div class="custom-radio"></div> No, not really
+                            </label>
+                            <div class="percent">5%</div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="image-grid">
+                <img src="img/image1.png" alt="Фото 1">
+                <img src="img/image2.png" alt="Фото 2">
+                <img src="img/image3.png" alt="Фото 3">
+                <img src="img/image4.png" alt="Фото 4">
+                <img src="img/image5.png" alt="Фото 5">
+                <img src="img/image6.png" alt="Фото 6">
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
