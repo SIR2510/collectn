@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     const options = document.querySelectorAll(".poll-option input");
     const percentages = [75, 15, 5];
+    const pollContainer = document.querySelector(".poll-container");
     
     options.forEach((input, index) => {
         input.addEventListener("change", () => {
+            pollContainer.classList.add("voted");
+            
             document.querySelectorAll(".progress-container, .percent").forEach(el => {
                 el.style.display = "block";
             });
