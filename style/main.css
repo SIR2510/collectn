@@ -336,7 +336,7 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (min-width: 745px) and (max-height: 744px) {
+@media (max-height: 744px) {
     .content {
         flex-direction: row;
         padding-left: clamp(3px, 15vw, 240px);
