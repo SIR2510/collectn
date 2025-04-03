@@ -34,6 +34,13 @@ body::-webkit-scrollbar {
     pointer-events: none;
 }
 
+@media (min-width: 2001px) {
+    .background-logo {
+        background-size: cover;
+        background-position: center;
+    }
+}
+
 .content {
     display: flex;
     flex-direction: row;
@@ -96,6 +103,7 @@ body::-webkit-scrollbar {
 
 .poll {
     margin-top: 20px;
+    max-width: 400px;
 }
 
 .poll h1 {
@@ -221,6 +229,11 @@ body::-webkit-scrollbar {
     pointer-events: none;
 }
 
+.poll-container.voted .poll-option:first-child {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .poll-container.voted .poll-option:not(.selected) .radio-container {
     cursor: default;
 }
@@ -233,7 +246,6 @@ body::-webkit-scrollbar {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 312px));
     gap: 40px;
-    overflow: hidden;
     padding-bottom: 40px;
     margin-top: 97px;
     width: 100%;
@@ -256,87 +268,69 @@ body::-webkit-scrollbar {
     max-width: 312px;
 }
 
-@media (max-width: 1133px) {
-    .logo {
-        width: 154px;
-        height: 42px;
-    }
-    
-    .user_info_text p:first-child,
-    .user_info_text p:last-child,
-    .radio-container {
-        font-size: 16.23px;
-        line-height: 27.83px;
-    }
-    
-    .poll p {
-        font-size: 17.39px;
-        line-height: 17.39px;
-    }
-    
-    .user-info img {
-        width: 48.7px;
-        height: 48.7px;
+@media (max-width: 2000px) and (min-width: 1601px) {
+    .image-grid {
+        grid-template-columns: repeat(3, minmax(0, 312px));
     }
 }
 
-@media (max-width: 952px) {
-    .logo {
-        width: 114px;
-        height: 31px;
-    }
-    
-    .user_info_text p:first-child,
-    .user_info_text p:last-child,
-    .radio-container {
-        font-size: 13.59px;
-        line-height: 23.3px;
-    }
-    
-    .poll p {
-        font-size: 14.56px;
-        line-height: 14.56px;
-    }
-    
-    .user-info img {
-        width: 40.77px;
-        height: 40.77px;
+@media (max-width: 1600px) and (min-width: 1201px) {
+    .image-grid {
+        grid-template-columns: repeat(2, minmax(0, 312px));
     }
 }
 
-@media (max-width: 744px) {
-    .logo-link {
-        display: block;
-        width: 230px;
-        margin: 40px auto 30px;
+@media (max-width: 1200px) and (min-width: 1101px) {
+    .image-grid {
+        grid-template-columns: repeat(1, minmax(0, 312px));
+        overflow-y: auto;
+        max-height: 70vh;
     }
-    
-    .logo {
-        width: 230px;
-        height: 60px;
-    }
-    
-    .user_info_text p:first-child,
-    .user_info_text p:last-child,
-    .radio-container {
-        font-size: 16.23px;
-        line-height: 27.83px;
-    }
-    
-    .poll p {
-        font-size: 17.39px;
-        line-height: 17.39px;
-    }
-    
-    .user-info img {
-        width: 48.7px;
-        height: 48.7px;
-    }
-    
+}
+
+@media (max-width: 1100px) and (min-width: 901px) {
     .content {
         flex-direction: column;
+    }
+    
+    .left-column {
+        position: static;
+        width: 100%;
+        margin-right: 0;
+        padding-bottom: 30px;
+    }
+    
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 312px));
+        overflow-y: auto;
+        max-height: 70vh;
+        padding-bottom: 20px;
+        margin-top: 0;
         gap: 30px;
-        padding: 0 20px;
+    }
+    
+    .image-grid {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .image-grid::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .image-grid img:last-child {
+        margin-right: 20px;
+    }
+    
+    .image-grid {
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 745px) {
+    .content {
+        flex-direction: column;
     }
     
     .left-column {
@@ -345,98 +339,66 @@ body::-webkit-scrollbar {
         margin-right: 0;
     }
     
-    .poll p {
-        white-space: normal;
+    .image-grid {
+        grid-template-columns: repeat(1, minmax(0, 312px));
+        overflow-y: auto;
+        max-height: 70vh;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 744px) {
+    .content {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0;
+    }
+    
+    .left-column {
+        position: static;
+        width: 100%;
+        padding: 40px 20px 0;
+        margin-right: 0;
+    }
+    
+    .poll {
+        max-width: 100%;
     }
     
     .image-grid {
         display: flex;
         overflow-x: auto;
-        gap: 20px;
-        padding: 0 15px 30px;
         scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        margin-top: 30px;
-        scroll-padding: 15px;
+        gap: 15px;
+        padding: 0 0 20px 0;
+        margin: 0;
     }
     
     .image-grid img {
-        flex: 0 0 272px;
-        height: 407px;
+        flex: 0 0 85vw;
+        margin-left: 15px;
         scroll-snap-align: start;
         max-width: none;
+    }
+    
+    .logo-link {
+        display: block;
+        width: 230px;
+        margin: 0 auto 30px;
+    }
+    
+    .poll p {
+        white-space: normal;
     }
 }
 
 @media (max-width: 375px) {
-    .logo-link {
-        width: 162px;
-        margin: 40px auto 30px;
-    }
-    
-    .logo {
-        width: 162px;
-        height: 44px;
-    }
-    
-    .user_info_text p:first-child,
-    .user_info_text p:last-child,
-    .radio-container {
-        font-size: 13.59px;
-        line-height: 23.3px;
-    }
-    
-    .poll p {
-        font-size: 14.56px;
-        line-height: 14.56px;
-    }
-    
-    .user-info img {
-        width: 40.77px;
-        height: 40.77px;
-    }
-    
-    .content {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    
-    .image-grid {
-        padding: 0 10px 30px;
-    }
-    
     .image-grid img {
-        flex: 0 0 260px;
-        height: 390px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .image-grid {
-        grid-template-columns: repeat(3, minmax(0, 312px));
-    }
-}
-
-@media (max-width: 1199px) and (min-width: 745px) {
-    .image-grid {
-        display: flex;
-        overflow-x: auto;
-        gap: 30px;
-        padding: 0 20px 40px;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scroll-padding: 20px;
+        flex: 0 0 80vw;
     }
     
-    .image-grid img {
-        flex: 0 0 350px;
-        height: 525px;
-        scroll-snap-align: start;
-        max-width: none;
-    }
-    
-    .content {
-        padding-right: 0;
+    .left-column {
+        padding: 40px 15px 0;
     }
 }
 
