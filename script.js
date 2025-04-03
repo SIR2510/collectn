@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
     const options = document.querySelectorAll(".poll-option input");
     const percentages = [75, 15, 5];
     const pollContainer = document.querySelector(".poll-container");
@@ -7,26 +6,22 @@ document.addEventListener('DOMContentLoaded', function() {
     options.forEach((input, index) => {
         input.addEventListener("change", function() {
             if (this.checked) {
-                
                 pollContainer.classList.add("voted");
-                
                 this.closest('.poll-option').classList.add('selected');
+                
+                options.forEach(opt => {
+                    if (opt !== this) {
+                        opt.disabled = true;
+                    }
+                });
                 
                 setTimeout(() => {
                     document.querySelectorAll(".progress").forEach((bar, i) => {
-                       
                         setTimeout(() => {
                             bar.style.width = percentages[i] + "%";
                         }, i * 200);
                     });
                 }, 300);
-                
-                options.forEach(opt => {
-                    if (opt !== this) {
-                        opt.disabled = true;
-                        opt.nextElementSibling.querySelector('.custom-radio').style.cursor = 'not-allowed';
-                    }
-                });
             }
         });
     });
