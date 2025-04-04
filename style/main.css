@@ -39,6 +39,10 @@ body::-webkit-scrollbar {
         background-size: cover;
         background-position: center;
     }
+    .content {
+        max-width: 1800px;
+        margin: 0 auto;
+    }
 }
 
 .content {
@@ -229,9 +233,9 @@ body::-webkit-scrollbar {
     pointer-events: none;
 }
 
-.poll-container.voted .poll-option:first-child {
+.poll-container.voted .poll-option.selected {
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: none;
 }
 
 .poll-container.voted .poll-option:not(.selected) .radio-container {
@@ -239,7 +243,7 @@ body::-webkit-scrollbar {
 }
 
 .poll-container.voted .poll-option.selected .radio-container {
-    cursor: pointer;
+    cursor: default;
 }
 
 .image-grid {
@@ -268,135 +272,124 @@ body::-webkit-scrollbar {
     max-width: 312px;
 }
 
-@media (max-width: 2000px) and (min-width: 1601px) {
+@media (min-width: 1601px) {
     .image-grid {
         grid-template-columns: repeat(3, minmax(0, 312px));
     }
 }
 
-@media (max-width: 1600px) and (min-width: 1201px) {
+@media (max-width: 1600px) and (min-width: 1551px) {
     .image-grid {
-        grid-template-columns: repeat(2, minmax(0, 312px));
+        grid-template-columns: repeat(3, minmax(0, 312px));
     }
 }
 
-@media (max-width: 1200px) and (min-width: 1101px) {
+@media (max-width: 1550px) and (min-width: 1201px) {
+    .content {
+        flex-direction: row;
+    }
+    
+    .left-column {
+        position: sticky;
+        top: 40px;
+        width: 400px;
+        margin-right: 80px;
+    }
+    
     .image-grid {
-        grid-template-columns: repeat(1, minmax(0, 312px));
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 200px;
         overflow-y: auto;
-        max-height: 70vh;
+        max-height: calc(100vh - 150px);
+        padding-right: 10px;
+    }
+    
+    .image-grid img {
+        width: 312px;
+        height: auto;
+        aspect-ratio: 2/3;
     }
 }
 
-@media (max-width: 1100px) and (min-width: 901px) {
+@media (max-width: 1200px) and (min-width: 901px) {
     .content {
         flex-direction: column;
     }
-    
     .left-column {
         position: static;
         width: 100%;
         margin-right: 0;
-        padding-bottom: 30px;
+        padding-bottom: 40px;
     }
-    
     .image-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 312px));
-        overflow-y: auto;
-        max-height: 70vh;
-        padding-bottom: 20px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
         margin-top: 0;
-        gap: 30px;
-    }
-    
-    .image-grid {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-    
-    .image-grid::-webkit-scrollbar {
-        display: none;
-    }
-    
-    .image-grid img:last-child {
-        margin-right: 20px;
-    }
-    
-    .image-grid {
-        overflow-x: hidden;
     }
 }
 
 @media (max-width: 900px) and (min-width: 745px) {
     .content {
         flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
     }
-    
     .left-column {
         position: static;
         width: 100%;
         margin-right: 0;
+        padding-bottom: 40px;
     }
-    
     .image-grid {
-        grid-template-columns: repeat(1, minmax(0, 312px));
-        overflow-y: auto;
-        max-height: 70vh;
-        margin-top: 40px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+        margin-top: 0;
     }
 }
 
 @media (max-width: 744px) {
     .content {
         flex-direction: column;
-        gap: 30px;
+        gap: 16px;
         padding: 0;
     }
-    
     .left-column {
         position: static;
         width: 100%;
-        padding: 40px 20px 0;
+        padding: 20px 20px 0;
         margin-right: 0;
-    }
-    
-    .poll {
-        max-width: 100%;
     }
     
     .image-grid {
         display: flex;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        gap: 15px;
-        padding: 0 0 20px 0;
+        gap: 12px;
+        padding: 0 20px 16px;
         margin: 0;
+        scroll-padding-left: 20px;
     }
-    
     .image-grid img {
-        flex: 0 0 85vw;
-        margin-left: 15px;
+        flex: 0 0 calc(100% - 40px);
+        width: calc(100vw - 40px);
+        height: 400px;
         scroll-snap-align: start;
-        max-width: none;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-left: 10px;
     }
     
-    .logo-link {
-        display: block;
-        width: 230px;
-        margin: 0 auto 30px;
-    }
-    
-    .poll p {
-        white-space: normal;
+    .image-grid img:first-child {
+        margin-left: 20px;
     }
 }
 
 @media (max-width: 375px) {
     .image-grid img {
-        flex: 0 0 80vw;
+        flex: 0 0 calc(100vw - 30px);
     }
-    
     .left-column {
         padding: 40px 15px 0;
     }
