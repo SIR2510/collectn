@@ -135,6 +135,7 @@ body::-webkit-scrollbar {
     margin-bottom: 8px;
     margin-top: 30px;
     transition: opacity 0.3s ease;
+    cursor: pointer;
 }
 
 .poll-option:last-child {
@@ -196,6 +197,7 @@ body::-webkit-scrollbar {
     box-sizing: border-box;
     margin-right: 12px;
     transition: all 0.2s ease;
+    cursor: pointer;
 }
 
 .custom-radio::after {
@@ -223,7 +225,7 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     flex-grow: 1;
-    cursor: default;
+    cursor: pointer;
     max-width: 200px;
     font-size: 22px;
 }
@@ -243,6 +245,14 @@ body::-webkit-scrollbar {
 }
 
 .poll-container.voted .poll-option.selected .radio-container {
+    cursor: default;
+}
+
+.poll-container.voted .poll-option {
+    cursor: default;
+}
+
+.poll-container.voted .custom-radio {
     cursor: default;
 }
 
@@ -284,7 +294,32 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (max-width: 1550px) and (min-width: 1201px) {
+@media (max-width: 1550px) and (min-width: 1461px) {
+    .content {
+        flex-direction: row;
+    }
+    
+    .left-column {
+        position: sticky;
+        top: 40px;
+        width: 400px;
+        margin-right: 80px;
+    }
+    
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 97px;
+    }
+    
+    .image-grid img {
+        width: 100%;
+        max-width: none;
+    }
+}
+
+@media (max-width: 1460px) and (min-width: 1201px) {
     .content {
         flex-direction: row;
     }
@@ -300,7 +335,7 @@ body::-webkit-scrollbar {
         display: flex;
         flex-direction: column;
         gap: 40px;
-        margin-top: 200px;
+        margin-top: 97px;
         overflow-y: auto;
         max-height: calc(100vh - 150px);
         padding-right: 10px;
