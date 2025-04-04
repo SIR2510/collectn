@@ -294,7 +294,7 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (max-width: 1550px) and (min-width: 1461px) {
+@media (max-width: 1550px) and (min-width: 1201px) {
     .content {
         flex-direction: row;
     }
@@ -309,8 +309,8 @@ body::-webkit-scrollbar {
     .image-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px;
-        margin-top: 97px;
+        gap: 15px;
+        margin-top: 200px;
     }
     
     .image-grid img {
@@ -319,7 +319,7 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (max-width: 1460px) and (min-width: 1201px) {
+@media (max-width: 1200px) and (min-width: 1101px) {
     .content {
         flex-direction: row;
     }
@@ -334,8 +334,8 @@ body::-webkit-scrollbar {
     .image-grid {
         display: flex;
         flex-direction: column;
-        gap: 40px;
-        margin-top: 97px;
+        gap: 15px;
+        margin-top: 200px;
         overflow-y: auto;
         max-height: calc(100vh - 150px);
         padding-right: 10px;
@@ -348,7 +348,7 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (max-width: 1200px) and (min-width: 901px) {
+@media (max-width: 1100px) and (min-width: 901px) {
     .content {
         flex-direction: column;
     }
