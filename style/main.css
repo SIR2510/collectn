@@ -430,112 +430,220 @@ body::-webkit-scrollbar {
     }
 }
 
-@media (max-width: 1133px) and (min-aspect-ratio: 1.5/1) {
+@media (max-width: 952px) and (min-aspect-ratio: 2.5/1) {
     .content {
         padding-right: 0;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        gap: clamp(20px, 5vw, 80px);
-        padding-left: clamp(10px, 5vw, 240px);
+        gap: 20px;
+        padding-left: 10px;
     }
     
     .left-column {
         position: sticky;
         top: 40px;
-        width: clamp(300px, 30vw, 400px);
+        width: 300px;
         flex-shrink: 0;
-        margin-right: clamp(20px, 5vw, 80px);
+        margin-right: 20px;
     }
     
     .logo-link {
-        width: clamp(114px, 10vw, 154px);
+        width: 114px;
     }
     
     .logo {
-        width: 100%;
-        height: auto;
-        margin-top: clamp(30px, 5vw, 97px);
-        margin-bottom: clamp(20px, 3vw, 53px);
+        width: 114px;
+        height: 31px;
+        margin-top: 30px;
+        margin-bottom: 20px;
     }
     
     .user-info {
-        gap: clamp(10px, 2vw, 15px);
-        margin-bottom: clamp(15px, 2vw, 26px);
+        gap: 10px;
+        margin-bottom: 15px;
     }
     
     .user-info img {
-        width: clamp(48px, 5vw, 67px);
-        height: clamp(48px, 5vw, 67px);
+        width: 48px;
+        height: 48px;
     }
     
     .user_info_text p:first-child {
-        font-size: clamp(13px, 1.5vw, 16px);
-        line-height: clamp(23px, 2vw, 27px);
+        font-size: 13px;
+        line-height: 23px;
     }
     
     .user_info_text p:last-child {
-        font-size: clamp(12px, 1.3vw, 15.07px);
-        line-height: clamp(20px, 1.8vw, 24.35px);
+        font-size: 12px;
+        line-height: 20px;
     }
     
     .poll h1 {
-        font-size: clamp(18px, 2vw, 21.84px);
-        margin-bottom: clamp(10px, 1vw, 15px);
+        font-size: 21.84px;
+        line-height: 1;
+        margin-bottom: 10px;
     }
     
     .poll p {
-        font-size: clamp(14px, 1.5vw, 16px);
-        line-height: clamp(14px, 1.5vw, 16px);
-        margin-bottom: clamp(10px, 1.5vw, 20px);
+        font-size: 14px;
+        line-height: 14px;
+        margin-bottom: 10px;
     }
     
     .poll-option {
-        font-size: clamp(13px, 1.4vw, 15px);
-        padding: clamp(8px, 1vw, 12px) 0;
-        margin-top: clamp(15px, 2vw, 30px);
+        font-size: 13px;
+        line-height: 23px;
+        padding: 8px 0;
+        margin-top: 15px;
     }
     
     .custom-radio {
-        width: clamp(19px, 2vw, 22px);
-        height: clamp(19px, 2vw, 22px);
-        margin-right: clamp(8px, 1vw, 12px);
+        width: 19px;
+        height: 19px;
+        margin-right: 8px;
     }
     
     .percent {
-        font-size: clamp(14px, 1.5vw, 22px);
+        font-size: 14px;
     }
     
     .progress-container {
-        margin-top: clamp(5px, 0.8vw, 8px);
+        margin-top: 5px;
     }
     
     .image-grid {
         display: flex;
         flex-direction: row;
-        align-content: flex-start;
-        gap: clamp(20px, 3vw, 40px);
+        flex-wrap: nowrap;
+        gap: 20px;
         overflow-x: auto;
-        width: calc(100% - clamp(340px, 35vw, 480px));
-        padding-bottom: clamp(20px, 3vw, 40px);
-        margin-top: clamp(30px, 5vw, 97px);
+        width: calc(100% - 320px);
+        padding-bottom: 20px;
         -ms-overflow-style: none;
         scrollbar-width: none;
-        height: calc(clamp(300px, 40vw, 468px) + clamp(20px, 3vw, 40px));
-    }
-    
-    .image-grid::-webkit-scrollbar {
-        display: none;
+        height: 395px;
     }
     
     .image-grid img {
-        width: clamp(200px, 25vw, 312px);
-        height: clamp(300px, 40vw, 468px);
-        border-radius: clamp(8px, 1vw, 12px);
+        width: 251px;
+        height: 375px;
+        border-radius: 8px;
         object-fit: cover;
         flex-shrink: 0;
     }
 }
+
+@media (min-width: 953px) and (max-width: 1133px) and (min-aspect-ratio: 1.5/1) {
+    .content {
+        padding-right: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 80px;
+        padding-left: 240px;
+    }
+    
+    .left-column {
+        position: sticky;
+        top: 40px;
+        width: 400px;
+        flex-shrink: 0;
+        margin-right: 80px;
+    }
+    
+    .logo-link {
+        width: 154px;
+    }
+    
+    .logo {
+        width: 154px;
+        height: 42px;
+        margin-top: 97px;
+        margin-bottom: 53px;
+    }
+    
+    .user-info {
+        gap: 15px;
+        margin-bottom: 26px;
+    }
+    
+    .user-info img {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .user_info_text p:first-child {
+        font-size: 16px;
+        line-height: 27px;
+    }
+    
+    .user_info_text p:last-child {
+        font-size: 15.07px;
+        line-height: 24.35px;
+    }
+    
+    .poll h1 {
+        font-size: 21.84px;
+        line-height: 1;
+        margin-bottom: 15px;
+    }
+    
+    .poll p {
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .poll-option {
+        font-size: 15px;
+        line-height: 26px;
+        padding: 12px 0;
+        margin-top: 30px;
+    }
+    
+    .custom-radio {
+        width: 22px;
+        height: 22px;
+        margin-right: 12px;
+    }
+    
+    .percent {
+        font-size: 22px;
+    }
+    
+    .progress-container {
+        margin-top: 8px;
+    }
+    
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 200px);
+        grid-template-rows: repeat(2, 300px);
+        gap: 40px;
+        overflow-x: auto;
+        width: calc(100% - 480px);
+        padding-bottom: 40px;
+        margin-top: 97px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        height: 640px;
+    }
+    
+    .image-grid img {
+        width: 200px;
+        height: 300px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+}
+
+.image-grid::-webkit-scrollbar {
+    display: none;
+}
+
+
+
 
 .modal {
     display: none;
@@ -553,8 +661,8 @@ body::-webkit-scrollbar {
 .modal-content {
     display: block;
     margin: auto;
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 100%;
+    max-height: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
