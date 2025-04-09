@@ -541,7 +541,7 @@ body::-webkit-scrollbar {
         flex-direction: row;
         align-items: flex-start;
         gap: 80px;
-        padding-left: 240px;
+        padding-left: 100px;
     }
     
     .left-column {
@@ -549,7 +549,7 @@ body::-webkit-scrollbar {
         top: 40px;
         width: 400px;
         flex-shrink: 0;
-        margin-right: 80px;
+        margin-right: 60px;
     }
     
     .logo-link {
@@ -559,8 +559,8 @@ body::-webkit-scrollbar {
     .logo {
         width: 154px;
         height: 42px;
-        margin-top: 97px;
-        margin-bottom: 53px;
+        margin-top: 67px;
+        margin-bottom: 32px;
     }
     
     .user-info {
@@ -618,24 +618,24 @@ body::-webkit-scrollbar {
     
     .image-grid {
         display: grid;
-        grid-template-columns: repeat(3, 200px);
         grid-template-rows: repeat(2, 300px);
-        gap: 40px;
+        column-gap: 176px;
+        row-gap: 12px;
         overflow-x: auto;
         width: calc(100% - 480px);
         padding-bottom: 40px;
         margin-top: 97px;
         -ms-overflow-style: none;
         scrollbar-width: none;
-        height: 640px;
+        max-height: 690px;
     }
     
     .image-grid img {
         width: 200px;
         height: 300px;
-        border-radius: 12px;
+        border-radius: 7px;
         object-fit: cover;
-    }
+}
 }
 
 .image-grid::-webkit-scrollbar {
